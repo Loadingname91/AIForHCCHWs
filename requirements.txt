@@ -1,0 +1,39 @@
+# ============================================================
+# CS6961 · AI for HCC — Hugging Face Agents Course (local-first)
+# Install with:  pip install -r requirements.txt
+# ============================================================
+
+# --- core plumbing -------------------------------------------------
+python-dotenv>=1.0.0
+requests>=2.32.0
+rich>=13.7.0
+
+# --- OpenAI-compatible client (works for Ollama / vLLM / Groq / ...)
+openai>=1.60.0
+
+# --- Unit 1 + Unit 2.1 : smolagents --------------------------------
+smolagents[toolkit,openai,litellm]>=1.14.0
+
+# --- Unit 2.2 : LangGraph / LangChain ------------------------------
+langgraph>=0.2.60
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langchain-ollama>=0.2.0
+langchain-huggingface>=0.1.0
+
+# --- Unit 2.3 : LlamaIndex -----------------------------------------
+llama-index-core>=0.12.0
+llama-index-llms-ollama>=0.5.0
+llama-index-llms-openai-like>=0.3.0
+llama-index-embeddings-huggingface>=0.5.0
+
+# --- Hugging Face Hub (tokenizers, embeddings, the fallback cloud path)
+huggingface_hub>=0.28.0
+
+# --- web search, used by smolagents' WebSearchTool -----------------
+# Not imported directly anywhere here; the tool needs it at runtime.
+ddgs>=9.0.0
+
+# --- development only ---
+pytest>=8.0.0
