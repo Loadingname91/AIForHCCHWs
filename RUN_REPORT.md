@@ -5,6 +5,8 @@ date: 2026-09-21
 
 # CS6961 Setup — Run Report
 
+Repo: https://github.com/Loadingname91/AIForHCCHWs
+
 ## Summary
 
 I set up and verified the CS6961 local-first agent environment in `CS6961_setup/`, then ran example scripts against a local Ollama model. Setup hit one real blocker: `/tmp` is a 3.8 GB tmpfs, and a stale 3 GB leftover pip build directory had filled it, so `pip install -e .` failed with "No space left on device" even though the disk itself had 891 GB free; clearing that stale temp directory fixed it. I then copied `.env.example` to `.env` and corrected `OLLAMA_MODEL_ID` from the file's default `qwen3:8b` to `qwen3:1.7b`, since that's the model Ollama had actually pulled on this machine. After that, `scripts/doctor.py` passed every check (packages, `.env` config, local server, chat completion, tool calling), and all eight example scripts run — raw chat, a hand-written ReAct loop, a smolagents `CodeAgent`, a LangGraph state machine, a LlamaIndex RAG agent, a GAIA agent with a web-search tool, the GAIA local-eval harness, and a custom-tools example adapted from the course's Tools page — entirely offline and at $0 cost. The LlamaIndex one (`04_unit2_llamaindex.py`) initially failed with a bad answer; the root cause and a one-function fix are in `src/cs6961_agents/backends.py`, detailed in the note at the end of this report. Examples 05–07 were run by the user directly, confirming the fix and setup hold outside my own shell too.
