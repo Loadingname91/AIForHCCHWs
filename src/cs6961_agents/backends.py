@@ -222,9 +222,13 @@ def get_llamaindex_llm(name: str | None = None, **overrides: Any):
         timeout=REQUEST_TIMEOUT,
         context_window=int(os.getenv("OLLAMA_NUM_CTX", "32768")),
     )
-    if spec.extra_body:
-        # OpenAILike merges additional_kwargs into the request body.
-        kwargs["additional_kwargs"] = dict(spec.extra_body)
+    # spec.extra_body carries reasoning_effort="none" (the fix for Qwen3's
+    # empty-content bug in plain chat). With 2+ tools on a small model that
+    # flag backfires: Ollama stops emitting a structured tool_calls entry and
+    # the model prints the call as text ("<tool>{...}</tool>") instead. This
+    # backend is only ever used for tool-calling agents, so leave thinking on.
+    extra_body = {k: v for k, v in spec.extra_body.items() if k != "reasoning_effort"}
+    kwargs["additional_kwargs"] = {"parallel_tool_calls": False, **extra_body}
     kwargs.update(overrides)
     return OpenAILike(**kwargs)
 
