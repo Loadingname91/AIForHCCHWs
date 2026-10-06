@@ -1,0 +1,175 @@
+$ python examples/09_unit3_tools.py
+# run at 2026-10-05 02:21:16
+
+Backend: [ollama] qwen3:4b-instruct @ http://localhost:11434/v1 (local, free)
+
+--- search_tool('Who's the current President of France?')
+## Search Results
+
+[President of France - Wikipedia](https://en.wikipedia.org/wiki/President_of_France)
+The current president is Emmanuel Macron, who succeeded François Hollande on 14 May 2017 following the 2017 presidential election, and was inaugurated for a second term on 7 May 2022 following the 2022 presidential election.
+
+[Emmanuel Macron - Wikipedia](https://en.wikipedia.org/wiki/Emmanuel_Macron)
+Emmanuel Jean-Michel Frédéric Macron[b] (born 21 December 1977) is a French politician who has served as President of France since 2017. He has been a member of Renaissance since founding the party in 2016.
+
+[Welcome to the official website of the President of France](https://www.elysee.fr/en/)
+Jun 1, 2026 · Find out all the news of the President Emmanuel Macron on the official website and discover our pages on the history of the French Republic.
+
+[Who is Emmanuel Macron, the new President of France?](https://www.aldianews.com/en/politics/policy/who-emmanuel-macron)
+Aug 31, 2026 · Emmanuel Macron will take office on May 14, according to the schedule of the Presidency of the Republic.
+
+[France President 2025: Who Is Emmanuel Macron? Term, Wife ...](https://ottawapress.org/blog/france-president-emmanuel-macron/)
+Jun 30, 2026 · Emmanuel Macron has served as the president of France since 14 May 2017 (Élysée (official French presidency website)) He was re-elected on 24 April 2022, defeating Marine Le Pen (Le Monde (leading French daily))
+
+[Emmanuel Macron | Biography, Political Party, Age, Presidency ...](https://www.britannica.com/biography/Emmanuel-Macron)
+4 days ago · Emmanuel Macron is a French banker and politician who was elected president of France in 2017. Macron was the first person in the history of the Fifth Republic to win the presidency without the backing of either the Socialists or the Gaullists, and he was France’s youngest head of state since Napoleon.
+
+[Emmanuel Macron - Élysée](https://www.elysee.fr/en/emmanuel-macron)
+Jan 2, 2023 · Emmanuel Macron is the eighth President of the Fifth Republic of France. He launched the movement « En Marche ! », founded on 6 April 2016, and was its leader until his victory in the presidential election on 7 May 2017. 
+
+--- weather_info_tool('Paris')
+Weather in Paris: Clear, 25°C 
+
+--- hub_stats_tool('facebook')
+The most downloaded model by facebook is facebook/contriever with 8,130,935 downloads. 
+
+╭────────────────────────────────── New run ───────────────────────────────────╮
+│                                                                              │
+│ What is Facebook and what's their most popular model?                        │
+│                                                                              │
+╰─ OpenAIModel - qwen3:4b-instruct ────────────────────────────────────────────╯
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  facebook_info = web_search("What is Facebook?")                               
+  print("Facebook information:", facebook_info)                                 
+                                                                                
+  # Search for Facebook's most popular model (likely referring to Meta's AI     
+  models)                                                                       
+  facebook_model_info = web_search("What is Facebook's most popular AI          
+  model?")                                                                      
+  print("Facebook's most popular AI model:", facebook_model_info)               
+ ────────────────────────────────────────────────────────────────────────────── 
+Execution logs:
+Facebook information: ## Search Results
+
+[Facebook - Wikipedia](https://en.wikipedia.org/wiki/Facebook)
+Facebook is an American social networking service owned by the American 
+technology conglomerate Meta Platforms. It was founded in 2004 by Mark 
+Zuckerberg, along with his Harvard College roommates and fellow students Eduardo
+Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.
+
+[Facebook Explained: Origins, Why People Like It ... - 
+Lifewire](https://www.lifewire.com/what-is-facebook-3486391)
+May 15, 2024 · Facebook is a social networking website where users can post 
+comments, share photographs, and post links to news or other interesting content
+on the web, chat live, and watch short-form video.
+
+[What is Facebook? - TechTargetWhat Is Facebook? The 2026 Guide for UK 
+BusinessesWhat Is Facebook? Defining the Social Era - Tech Review 
+AdvisorFacebook | Overview, History, Controversies, & Facts 
+...Facebook](https://www.techtarget.com/whatis/definition/Facebook)
+Mar 31, 2025 · Facebook is a popular free social networking website that enables
+users to share information and photos and keep in touch with family and friends.
+Sep 17, 2026 · Facebook is a social networking platform where people create 
+profiles, connect with friends and family, share photos and videos, join groups,
+and organise events. Launched in 2004, it is the most widely used social network
+in the world and in 2026 it works as an AI-driven discovery and answer engine as
+much as a friends-and-family feed. May 15, 2026 · Understand the mechanics of 
+Facebook, from personal profiles and groups to privacy tools. Manage your 
+digital footprint and connect with your community. 1 day ago · Facebook, 
+American online social media platform and social network service that is part of
+the company Meta Platforms. Facebook was founded in 2004 by Mark Zuckerberg, 
+Eduardo Saverin, Dustin Moskovitz, and Chris Hughes, all of whom were students 
+at Harvard University. Facebook. 154,795,778 followers · 462,879 talking about 
+this. Community Values We believe people can do more together than alone and 
+that each of us...
+
+[What Is Facebook? The 2026 Guide for UK 
+Businesses](https://profiletree.com/what-is-facebook/)
+Sep 17, 2026 · Facebook is a social networking platform where people create 
+profiles, connect with friends and family, share photos and videos, join groups,
+and organise events. Launched in 2004, it is the most widely used social network
+in the world and in 2026 it works as an AI-driven discovery and answer engine as
+much as a friends-and-family feed.
+
+[What Is Facebook? Defining the Social Era - Tech Review 
+Advisor](https://techreviewadvisor.com/what-is-facebook/)
+May 15, 2026 · Understand the mechanics of Facebook, from personal profiles and 
+groups to privacy tools. Manage your digital footprint and connect with your 
+community.
+
+[Facebook | Overview, History, Controversies, & Facts 
+...](https://www.britannica.com/money/Facebook)
+1 day ago · Facebook, American online social media platform and social network 
+service that is part of the company Meta Platforms. Facebook was founded in 2004
+by Mark Zuckerberg, Eduardo Saverin, Dustin Moskovitz, and Chris Hughes, all of 
+whom were students at Harvard University.
+
+[Facebook](https://www.facebook.com/facebook/about/)
+Facebook. 154,795,778 followers · 462,879 talking about this. Community Values 
+We believe people can do more together than alone and that each of us...
+Facebook's most popular AI model: ## Search Results
+
+[Introducing Muse Spark: Meta's Most Powerful Model 
+Yet](https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintellig
+ence-labs/)
+Apr 8, 2026 · It currently powers the Meta AI app and website, and will be 
+rolling out to WhatsApp, Instagram, Facebook, Messenger, and AI glasses in the 
+coming weeks. We will also be offering the model in private preview via API to 
+select partners.
+
+[Mark Zuckerberg's Meta Just Open-Sourced Its Most Powerful AI 
+...](https://www.fool.com/investing/2026/08/29/mark-zuckerbergs-meta-just-open-s
+ourced-its-most-p/)
+Aug 29, 2026 · Mark Zuckerberg's Meta Just Open-Sourced Its Most Powerful AI 
+Model to Take on OpenAI and Anthropic. Should Investors Watch Meta's AI Spending
+Closely?
+
+[Does Facebook Use AI? Meta's AI Tech Explained - 
+unanswered.io](https://unanswered.io/guide/does-facebook-use-ai-meta-artificial-
+intelligence)
+Jul 22, 2026 · Discover how Meta uses artificial intelligence across Facebook 
+for recommendations, ads, moderation, and creative tools. Learn when AI started 
+and whether the platform is truly run by AI.
+
+[Top 10 AI Models in 2026: Ranked by Benchmarks (June 
+Update)](https://techjournal.org/top-10-artificial-intelligence-models)
+8 hours ago · It’s a benchmark-driven ranking of the 10 most capable AI models 
+available right now in June 2026, based on actual performance data from 
+SWE-bench, GPQA Diamond, Terminal-Bench, AIME, and the Artificial Analysis 
+Intelligence Index.
+
+[What Is Meta AI? Features, Uses, Benefits - Blockchain 
+Council](https://www.blockchain-council.org/ai/what-is-meta-ai-features-use-case
+s-benefits/)
+Jun 15, 2026 · Meta AI is Meta's artificial intelligence system and assistant 
+built into Facebook, Instagram, WhatsApp, Messenger, Meta smart glasses, the 
+web, and a dedicated mobile app. It runs on Meta's Llama model family and 
+supports chat, web search, image generation, voice interaction, and personalized
+recommendations. That sounds broad because it is.
+
+[Introducing LLaMA: A foundational, 65-billion-parameter 
+...](https://ai.meta.com/blog/large-language-model-llama-meta-ai/)
+Feb 24, 2023 · Today, we’re releasing our LLaMA (Large Language Model Meta AI) 
+foundational model with a gated release. LLaMA is more efficient and competitive
+with previously published models of a similar size on existing benchmarks.
+
+[Introducing Muse: The World’s First Personal AI Agent Built 
+...](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)
+Sep 8, 2026 · Muse is a secure, private personal AI agent that proactively helps
+people meet their goals and suggests ideas.
+
+Out: None
+[Step 1: Duration 8.91 seconds| Input tokens: 2,174 | Output tokens: 136]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  final_answer("Facebook is a social networking platform owned by Meta          
+  Platforms, founded in 2004. Their most popular AI model is LLaMA.")           
+ ────────────────────────────────────────────────────────────────────────────── 
+Final answer: Facebook is a social networking platform owned by Meta Platforms, 
+founded in 2004. Their most popular AI model is LLaMA.
+[Step 2: Duration 10.92 seconds| Input tokens: 6,083 | Output tokens: 293]
+🎩 Alfred's Response:
+Facebook is a social networking platform owned by Meta Platforms, founded in 2004. Their most popular AI model is LLaMA.
+
+# exit code: 0

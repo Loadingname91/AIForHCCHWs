@@ -1,0 +1,79 @@
+$ python examples/08_unit3_guest_rag.py
+# run at 2026-10-05 02:19:40
+
+Backend: [ollama] qwen3:4b-instruct @ http://localhost:11434/v1 (local, free)
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/3 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 3/3 [00:00<00:00, 424.80 examples/s]
+Step 1: loaded 3 guests. First document:
+Name: Ada Lovelace
+Relation: best friend
+Description: Lady Ada Lovelace is my best friend. She is an esteemed mathematician and friend. She is renowned for her pioneering work in mathematics and computing, often celebrated as the first computer programmer due to her work on Charles Babbage's Analytical Engine.
+Email: ada.lovelace@example.com
+
+Step 2: guest_info_retriever('Ada Lovelace') ->
+Name: Ada Lovelace
+Relation: best friend
+Description: Lady Ada Lovelace is my best friend. She is an esteemed mathematician and friend. She is renowned for her pioneering work in mathematics and computing, often celebrated as the first computer programmer due to her work on Charles Babbage's Analytical Engine.
+Email: ada.lovelace@example.com
+
+Name: Marie Curie
+Relation: no relation
+Description: Marie Curie was a groundbreaking physicist and chemist, famous for her research on radioactivity.
+Email: marie.curie@example.com
+
+Name: Dr. Nikola Tesla
+Relation: old friend from university days
+Description: Dr. Nikola Tesla is an old friend from your university days. He's recently patented a new wireless energy transmission system and would be delighted to discuss it with you. Just remember he's passionate about pigeons, so that might make for good small talk.
+Email: nikola.tesla@gmail.com 
+
+╭────────────────────────────────── New run ───────────────────────────────────╮
+│                                                                              │
+│ Tell me about our guest named 'Lady Ada Lovelace'.                           │
+│                                                                              │
+╰─ OpenAIModel - qwen3:4b-instruct ────────────────────────────────────────────╯
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  lady_ada_info = guest_info_retriever(query="Lady Ada Lovelace")               
+  print(lady_ada_info)                                                          
+ ────────────────────────────────────────────────────────────────────────────── 
+Execution logs:
+Name: Ada Lovelace
+Relation: best friend
+Description: Lady Ada Lovelace is my best friend. She is an esteemed 
+mathematician and friend. She is renowned for her pioneering work in mathematics
+and computing, often celebrated as the first computer programmer due to her work
+on Charles Babbage's Analytical Engine.
+Email: ada.lovelace@example.com
+
+Name: Marie Curie
+Relation: no relation
+Description: Marie Curie was a groundbreaking physicist and chemist, famous for 
+her research on radioactivity.
+Email: marie.curie@example.com
+
+Name: Dr. Nikola Tesla
+Relation: old friend from university days
+Description: Dr. Nikola Tesla is an old friend from your university days. He's 
+recently patented a new wireless energy transmission system and would be 
+delighted to discuss it with you. Just remember he's passionate about pigeons, 
+so that might make for good small talk.
+Email: nikola.tesla@gmail.com
+
+Out: None
+[Step 1: Duration 9.81 seconds| Input tokens: 2,087 | Output tokens: 91]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ─ Executing parsed code: ───────────────────────────────────────────────────── 
+  final_answer("Lady Ada Lovelace is an esteemed mathematician and is renowned  
+  for her pioneering work in mathematics and computing, often celebrated as     
+  the first computer programmer due to her work on Charles Babbage's            
+  Analytical Engine.")                                                          
+ ────────────────────────────────────────────────────────────────────────────── 
+Final answer: Lady Ada Lovelace is an esteemed mathematician and is renowned for
+her pioneering work in mathematics and computing, often celebrated as the first 
+computer programmer due to her work on Charles Babbage's Analytical Engine.
+[Step 2: Duration 5.03 seconds| Input tokens: 4,544 | Output tokens: 217]
+🎩 Alfred's Response:
+Lady Ada Lovelace is an esteemed mathematician and is renowned for her pioneering work in mathematics and computing, often celebrated as the first computer programmer due to her work on Charles Babbage's Analytical Engine.
+
+# exit code: 0
